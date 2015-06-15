@@ -1,0 +1,50 @@
+  <link rel="import" href="google-map/google-map.html">
+  <link rel="import" href="geohash-js/geohash-js.html">
+  <link rel="import" href="google-map/google-map-search.html">
+
+  <dom-module id="get-hash">
+    <style>
+     google-map {
+       height: 0px;
+     }
+    </style>
+    <template>
+      <google-map-search id="googleMapSearch" map="{{map}}" query="{{location}}" result="{{result}}">
+        
+      </google-map-search>
+     
+      <google-map map="{{map}}"></google-map>
+    </template>
+    
+    <script>
+      
+(function() {
+  
+  Polymer({
+    is: 'get-hash',
+    properties: {
+      hash: {
+        type: String,
+        notify: true
+      },
+      location: {
+        type: String
+      },
+    },
+    geoHash: function(lng,lat) {
+      return encodeGeoHash(+lng, +lat);
+    },
+    observers: ['resultChanged(result)'],
+    resultChanged: function(newValue) {
+      if (newValue !== null) {
+        this.hash = this.geoHash(newValue.latitude, newValue.longitude);
+        console.log(this.hash);
+      }
+    }
+  });
+  
+})();
+
+    </script>
+  </dom-module>
+
