@@ -5,7 +5,7 @@
   <dom-module id="get-hash">
     <style>
      google-map {
-       height: 0px;
+       height: 400px;
      }
     </style>
     <template>
@@ -13,7 +13,7 @@
         
       </google-map-search>
      
-      <google-map map="{{map}}"></google-map>
+      <google-map hidden="[[hideMap]]" map="{{map}}"></google-map>
     </template>
     
     <script>
@@ -23,6 +23,9 @@
   Polymer({
     is: 'get-hash',
     properties: {
+      hideMap: { 
+        type: Boolean
+      },
       hash: {
         type: String,
         notify: true
