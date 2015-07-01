@@ -5,7 +5,7 @@
   <dom-module id="get-hash">
     <style>
      google-map {
-       height: 400px;
+       height: 0;
      }
     </style>
     <template>
@@ -13,7 +13,7 @@
         
       </google-map-search>
      
-      <google-map latitude="{{result.latitude}}" longitude="{{result.longitude}}" map="{{map}}"></google-map>
+      <google-map map="{{map}}"></google-map>
     </template>
     
     <script>
