@@ -13,7 +13,7 @@
         
       </google-map-search>
      
-      <google-map latitude="{{result.latitude}}" longitude="{{result.longitude}}" hidden="[[hideMap]]" map="{{map}}"></google-map>
+      <google-map latitude="{{result.latitude}}" longitude="{{result.longitude}}" map="{{map}}"></google-map>
     </template>
     
     <script>
@@ -23,9 +23,6 @@
   Polymer({
     is: 'get-hash',
     properties: {
-      hideMap: { 
-        type: Boolean
-      },
       hash: {
         type: String,
         notify: true
@@ -33,6 +30,7 @@
       location: {
         type: String
       },
+      result:Object
     },
     geoHash: function(lng,lat) {
       return encodeGeoHash(+lng, +lat);
