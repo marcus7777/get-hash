@@ -3,17 +3,10 @@
   <link rel="import" href="../google-map/google-map-search.html">
 
   <dom-module id="get-hash">
-    <style>
-     google-map {
-       height: 0;
-     }
-    </style>
+
     <template>
       <google-map-search id="googleMapSearch" map="{{map}}" query="{{location}}" result="{{result}}">
-        
       </google-map-search>
-     
-      <google-map map="{{map}}"></google-map>
     </template>
     
     <script>
@@ -30,6 +23,7 @@
       location: {
         type: String
       },
+      map:Object,
       result:Object
     },
     geoHash: function(lng,lat) {
@@ -39,13 +33,12 @@
     resultChanged: function(newValue) {
       if (newValue !== null) {
         this.hash = this.geoHash(newValue.latitude, newValue.longitude);
+        this.map.setCenter({lat: newValue.latitude, lng: newValue.longitude});
         console.log(this.hash);
       }
     }
   });
   
 })();
-
     </script>
   </dom-module>
-
