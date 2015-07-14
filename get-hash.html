@@ -30,13 +30,17 @@
     geoHash: function(lng,lat) {
       return encodeGeoHash(+lng, +lat);
     },
-    observers: ['resultChanged(result)'],
+    observers: ['resultChanged(result)','mapChanged(map.latitude,map.longitude)'],
     resultChanged: function(newValue) {
       if (newValue !== null) {
         this.hash = this.geoHash(newValue.latitude, newValue.longitude);
         this.map.setCenter({lat: newValue.latitude, lng: newValue.longitude});
         console.log(this.hash);
       }
+    },
+    mapChanged: function(latitude, longitude) {
+      this.hash = this.geoHash(latitude, longitude);
+      console.log(this.hash);
     }
   });
   
