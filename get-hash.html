@@ -38,7 +38,8 @@
         console.log(this.hash);
       }
     },
-    mapChanged: function() {// add to map idl??
+    mapChanged: function(newValue) {// add to map idl??
+      console.log(newValue);
       this.hash = this.geoHash(this.map.center.lat(), this.map.center.lng());
       console.log(this.hash);
     }
