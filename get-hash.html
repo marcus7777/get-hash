@@ -30,7 +30,7 @@
     geoHash: function(lng,lat) {
       return encodeGeoHash(+lng, +lat);
     },
-    observers: ['resultChanged(result)','mapChanged(map.latitude,map.longitude)'],
+    observers: ['resultChanged(result)','mapChanged(map.center.*'],
     resultChanged: function(newValue) {
       if (newValue !== null) {
         this.hash = this.geoHash(newValue.latitude, newValue.longitude);
@@ -38,8 +38,8 @@
         console.log(this.hash);
       }
     },
-    mapChanged: function(latitude, longitude) {
-      this.hash = this.geoHash(latitude, longitude);
+    mapChanged: function() {// add to map idl??
+      this.hash = this.geoHash(this.map.center.lat(), this.map.center.lng());
       console.log(this.hash);
     }
   });
