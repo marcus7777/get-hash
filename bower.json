@@ -1,0 +1,28 @@
+{
+  "name": "get-hash",
+  "version": "0.0.0",
+  "homepage": "https://github.com/marcus7777/get-hash",
+  "authors": [
+    "Marcus Hitchins <Marcus7777@gmail.com>"
+  ],
+  "description": "Useing google map to get a lat long and turn it to a geo hash",
+  "main": "get-hash.html",
+  "keywords": [
+    "polymer",
+    "web-components",
+    "map",
+    "wordpress"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.0.0",
+    "geo-hash-data":"marcus7777/geo-hash-data#master"
+  },
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
