@@ -5,6 +5,7 @@
   <title>Get hash demo</title>
   <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
   <link rel="import" href="../get-hash.html">
+  
   <style>
     body {
       margin: 0;
@@ -17,10 +18,11 @@
     }
   </style>
 </head>
+  
 <body fullbleed>
   <template is="dom-bind">
     <input value="{{go::input}}" />
-    <get-hash location="go" hash="{{hash}}">
+    <get-hash location="go" hash="{{hash}}"></get-hash>
     <span>{{hash}}</span>
   </template>
 </body>
