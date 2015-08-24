@@ -4,15 +4,14 @@
 @demo
 -->
 
-  <dom-module id="get-hash">
+<dom-module id="get-hash">
+  <template>
+    <google-map-search id="googleMapSearch" map="{{map}}" query="{{location}}" result="{{result}}">
+    </google-map-search>
+  </template>
+</dom-module>
 
-    <template>
-      <google-map-search id="googleMapSearch" map="{{map}}" query="{{location}}" result="{{result}}">
-      </google-map-search>
-    </template>
-    
-    <script>
-      
+<script>
 (function() {
   
   Polymer({
@@ -45,7 +44,5 @@
       console.log(this.hash);
     }
   });
-  
 })();
-    </script>
-  </dom-module>
+</script>
