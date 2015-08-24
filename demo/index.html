@@ -3,8 +3,8 @@
 <head>
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
   <title>Get hash demo</title>
-  <script src="../webcomponentsjs/webcomponents-lite.js"></script>
-  <link rel="import" href="get-hash.html">
+  <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+  <link rel="import" href="../get-hash.html">
   <style>
     body {
       margin: 0;
@@ -19,7 +19,8 @@
 </head>
 <body fullbleed>
   <template is="dom-bind">
-    <get-hash location="demo" hash="{{hash}}">
+    <input value="{{go::input}}" />
+    <get-hash location="go" hash="{{hash}}">
     <span>{{hash}}</span>
   </template>
 </body>
