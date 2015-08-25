@@ -2,28 +2,23 @@
 <html>
 <head>
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
-  <title>Get hash demo</title>
-  <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
-  <link rel="import" href="../get-hash.html">
+  <title>GetHash demo</title>
   
-  <style>
-    body {
-      margin: 0;
-      height: 100vh;
-    }
-    #controlsToggle {
-      position: absolute;
-      left: 10%;
-      bottom: 10%;
-    }
-  </style>
+<link rel="import" href="iron-ajax/iron-ajax.html" />
+<link rel="import" href="get-hash/get-hash.html">
+
+<link rel="import" href="google-map/google-map.html">
+
 </head>
   
-<body fullbleed>
+<body>
   <template is="dom-bind">
+
     <input value="{{go::input}}" />
-    <get-hash location="go" hash="{{hash}}"></get-hash>
-    <span>{{hash}}</span>
+    <google-map style="height:100px" map="{{map}}" ></google-map>
+    <get-hash location="{{go}}" map="{{map}}" hash="{{hash}}"></get-hash>
+    <p>{{hash}}</p>
+    
   </template>
 </body>
 </html>
