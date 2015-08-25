@@ -13,13 +13,11 @@
 
 <script>
 (function() {
-  
   Polymer({
     is: 'get-hash',
     properties: {
       hash: {
-        type: String,
-        notify: true
+        compouted: "geoHash(result.latitude, result.longitude)"
       },
       location: {
         type: String,
@@ -30,13 +28,6 @@
     },
     geoHash: function(lng,lat) {
       return encodeGeoHash(+lng, +lat);
-    },
-    observers: ['resultChanged(result)','mapChanged(map.center.*)'],
-    resultChanged: function(newValue) {
-      if (newValue !== null) {
-        this.hash = this.geoHash(newValue.latitude, newValue.longitude);
-        console.log(this.hash);
-      }
     },
     mapChanged: function(newValue) {// add to map idl??
       console.log(newValue);
