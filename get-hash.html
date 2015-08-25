@@ -24,15 +24,13 @@
         value: "london"
       },
       map:Object,
-      result:Object
+      result:Object,
+      hashFromMap:{
+        compouted: "geoHash(map.latitude, map.longitude)"
+      }
     },
     geoHash: function(lng,lat) {
       return encodeGeoHash(+lng, +lat);
-    },
-    mapChanged: function(newValue) {// add to map idl??
-      console.log(newValue);
-//      this.hash = this.geoHash(this.map.center.lat(), this.map.center.lng()); // looop?
-      console.log(this.hash);
     }
   });
 })();
