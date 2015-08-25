@@ -23,7 +23,10 @@
         type: String,
         value: "london"
       },
-      map:Object,
+      map:{
+        type:Object,
+        notify: true
+      },
       result:Object,
       hashFromMap:{
         compouted: "geoHash(map.latitude, map.longitude)"
