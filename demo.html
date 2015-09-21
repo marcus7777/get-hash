@@ -11,7 +11,7 @@
   <template is="dom-bind">
 
     <input value="{{go::input}}" />
-    <google-map language="en" libraries="places" style="height:200px" map="{{map}}" ></google-map>
+    <google-map global-search language="en" libraries="places" style="height:200px" map="{{map}}" ></google-map>
     <get-hash hash-from-map="{{hashFromMap}}" location="{{go}}" map="{{map}}" hash="{{hash}}"></get-hash>
     
     <p>{{hash}}</p>
