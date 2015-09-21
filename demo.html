@@ -1,13 +1,10 @@
 <!doctype html>
 <html>
 <head>
-  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
   <title>GetHash demo</title>
   
-<link rel="import" href="../get-hash/get-hash.html">
-
-<link rel="import" href="../google-map/google-map.html">
-
+  <link rel="import" href="get-hash.html">
+  <link rel="import" href="../google-map/google-map.html">
 </head>
   
 <body>
@@ -16,8 +13,10 @@
     <input value="{{go::input}}" />
     <google-map language="en" libraries="places" style="height:200px" map="{{map}}" ></google-map>
     <get-hash hash-from-map="{{hashFromMap}}" location="{{go}}" map="{{map}}" hash="{{hash}}"></get-hash>
+    
     <p>{{hash}}</p>
     <p>{{hashFromMap}}</p>
+    
   </template>
 </body>
 </html>
