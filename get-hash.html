@@ -6,8 +6,7 @@
 
 <dom-module id="get-hash">
   <template>
-    <google-map-search id="googleMapSearch" map="{{map}}" query="{{location}}" result="{{result}}">
-    </google-map-search>
+    <google-map-search global-search map="[[map]]" query="{{location}}" results="{{results}}"></google-map-search>
   </template>
 </dom-module>
 
@@ -34,6 +33,9 @@
     },
     geoHash: function(lng,lat) {
       return encodeGeoHash(+lng, +lat);
+    },
+    ready: function(){
+      
     }
   });
 })();
