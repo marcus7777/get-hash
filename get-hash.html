@@ -7,12 +7,6 @@
 <dom-module id="get-hash">
   <template>
     <google-map-search global-search map="{{map}}" query="{{location}}" results="{{results}}"></google-map-search>
-      <template is="dom-repeat" items="{{results}}" as="marker">
-        <h2>{{marker.name}}</h2>
-        <span>{{marker.formatted_address}}</span>
-        
-    </template>
-    <p>{{hash}}</p>
   </template>
 </dom-module>
 
