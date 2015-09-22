@@ -6,7 +6,13 @@
 
 <dom-module id="get-hash">
   <template>
-    <google-map-search global-search map="[[map]]" query="{{location}}" results="{{results}}"></google-map-search>
+    <google-map-search global-search map="{{map}}" query="{{location}}" results="{{results}}"></google-map-search>
+      <template is="dom-repeat" items="{{results}}" as="marker">
+        <h2>{{marker.name}}</h2>
+        <span>{{marker.formatted_address}}</span>
+        
+    </template>
+    <p>{{hash}}</p>
   </template>
 </dom-module>
 
@@ -16,26 +22,21 @@
     is: 'get-hash',
     properties: {
       hash: {
-        compouted: "geoHash(result.latitude, result.longitude)"
+        computed: "geoHash(results)",notify: true
       },
       location: {
-        type: String,
-        value: "london"
+        type: String, value: "london"
       },
       map:{
-        type:Object,
         notify: true
-      },
-      result:Object,
-      hashFromMap:{
-        compouted: "geoHash(map.latitude, map.longitude)"
       }
     },
-    geoHash: function(lng,lat) {
-      return encodeGeoHash(+lng, +lat);
-    },
-    ready: function(){
-      
+    geoHash: function(results) {
+      if (results.length > 0){
+        var top = results[0];
+        this.map.setCenter({lat:top.latitude, lng:top.longitude})
+        return encodeGeoHash( top.latitude, top.longitude );
+      }
     }
   });
 })();
