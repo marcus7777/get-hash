@@ -12,10 +12,9 @@
 
     <input value="{{go::input}}" />
     <google-map id="map" global-search language="en" libraries="places" style="height:200px" map="{{map}}" ></google-map>
-    <get-hash hash-from-map="{{hashFromMap}}" location="{{go}}" map="{{map}}" hash="{{hash}}"></get-hash>
+    <get-hash location="{{go}}" map="{{map}}" hash="{{hash}}"></get-hash>
     
     hash: <p>{{hash}}</p>
-    hashFromMap: <p>{{hashFromMap}}</p>
     
   </template>
 </body>
