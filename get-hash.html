@@ -1,6 +1,7 @@
   <link rel="import" href="../geohash-js/geohash-js.html">
   <link rel="import" href="../google-map/google-map-search.html">
 <!-- 
+This element is 4 people who need geohash with a particular location in the location property and the hash is the output, also requires that you link it to a map.
 @demo demo.html
 -->
 
@@ -16,7 +17,7 @@
     is: 'get-hash',
     properties: {
       hash: {
-        computed: "geoHash(results)",notify: true
+        computed: "_geoHash(results)",notify: true
       },
       location: {
         type: String, value: "london"
@@ -25,7 +26,7 @@
         notify: true
       }
     },
-    geoHash: function(results) {
+    _geoHash: function(results) {
       if (results.length > 0){
         var top = results[0];
         this.map.setCenter({lat:top.latitude, lng:top.longitude})
