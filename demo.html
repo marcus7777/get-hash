@@ -10,11 +10,11 @@
 <body>
   <template is="dom-bind">
 
-    <input value="{{go::input}}" />
+  Put the location in here: <input value="{{go::input}}" />
     <google-map id="map" global-search language="en" libraries="places" style="height:200px" map="{{map}}" ></google-map>
     <get-hash location="{{go}}" map="{{map}}" hash="{{hash}}"></get-hash>
     
-    hash: <p>{{hash}}</p>
+  Here is the hash: <p>{{hash}}</p>
     
   </template>
 </body>
